@@ -36,6 +36,10 @@ app.get("/delay/:sec", (req, res) => {
     }, ti * 1000);
   }
 });
+app.get("/uuid", (req, res) => {
+  let id = crypto.randomUUID();
+  res.json(`{ uuid : ${id}}`);
+});
 app.listen(8000, () => {
   console.log("listening at port 8000");
 });
